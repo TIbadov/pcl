@@ -403,7 +403,10 @@ if(WITH_PCAP)
 endif(WITH_PCAP)
 
 # OpenGL and GLUT
-include("${PCL_SOURCE_DIR}/cmake/pcl_find_gl.cmake")
+option(WITH_OPENGL "Support for OpenGL" TRUE)
+if(WITH_OPENGL)
+  include("${PCL_SOURCE_DIR}/cmake/pcl_find_gl.cmake")
+endif(WITH_OPENGL)
 
 # NLopt
 option(WITH_NLOPT "Use NLopt library for nonlinear optimization" FALSE)
